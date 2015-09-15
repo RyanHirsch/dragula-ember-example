@@ -11,5 +11,10 @@ export default Ember.Component.extend({
         this.get('drake').on('drop', (item, target, source) => {
             console.log('dropped');
         });
+    },
+    actions: {
+        register(container) {
+            this.get('drake').containers.push(container);
+        }
     }
 });
