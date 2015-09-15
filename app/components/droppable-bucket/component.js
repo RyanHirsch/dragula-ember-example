@@ -9,6 +9,9 @@ export default Ember.Component.extend({
         return this.get('items').filterBy('bucket', this.get('value'));
     }),
     didInsertElement() {
-        this.registerContainer(this.$('ul')[0]);
+        this.registerContainer({
+            element: this.$('ul')[0],
+            component: this
+        });
     }
 });

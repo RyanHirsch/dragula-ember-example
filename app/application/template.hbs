@@ -1,8 +1,14 @@
 <h2 id="title">Welcome to Ember</h2>
 
 {{outlet}}
+<ul>
+    {{#each model as |item|}}
+        <li>{{item.title}} - {{item.bucket}}</li>
+    {{/each}}
+</ul>
+<hr>
 
-{{#draggable-wrapper items=model as |register|}}
-    {{droppable-bucket items=model value="1" registerContainer=register}}
-    {{droppable-bucket items=model value="2" registerContainer=register}}
+{{#draggable-wrapper items=model as |register registerItem|}}
+    {{droppable-bucket items=model value="1" registerContainer=register registerItem=registerItem}}
+    {{droppable-bucket items=model value="2" registerContainer=register registerItem=registerItem}}
 {{/draggable-wrapper}}

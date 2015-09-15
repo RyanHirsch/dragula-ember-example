@@ -1,6 +1,8 @@
 <h3>Bucket {{value}}</h3>
 <ul>
     {{#each filteredItems as |item|}}
-        <li>{{item.title}}</li>
+        {{#simple-item item=item registerItem=registerItem}}
+            {{item.title}}
+        {{/simple-item}}
     {{/each}}
 </ul>
